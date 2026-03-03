@@ -12,7 +12,7 @@ class InventoryService:
         self.items = [item for item in self.items if item.name != name]
 
     def find_item(self, name):
-        for item in self.items:
+        for item in self.items: 
             if item.name == name:
                 return item
         return None
