@@ -15,6 +15,7 @@ class InventoryService:
         for item in self.items: 
             if item.name == name:
                 return item
+<<<<<<< HEAD
         return None
     
 def update_item(self, item_id, new_name=None, new_quantity=None, new_price=None):
@@ -34,3 +35,20 @@ def total_stock(self):
 
 def total_asset_value(self):
     return sum(item.quantity * item.price for item in self.items)
+=======
+        return None  # kalau tidak ditemukan
+
+    def calculate_total_stock(self):
+        total = 0
+        for item in self.items:
+            total += item.quantity
+        return total
+    
+    def update_item(self, name, new_quantity, new_price):
+        item = self.find_item(name)
+        if item:
+            item.quantity = new_quantity
+            item.price = new_price
+            return True
+        return False
+>>>>>>> 9fc4b607030a04f9d4c15fe2b5ebd2e82495b9bb
